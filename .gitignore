@@ -1,6 +1,20 @@
+<<<<<<< HEAD
+=======
+.idea/
+*.iml
+*.iws
+*.eml
+out/
+>>>>>>> master
 .DS_Store
 .svn
 log/*.log
 tmp/**
 node_modules/
+<<<<<<< HEAD
 .sass-cache
+=======
+.sass-cache
+css/reveal.min.css
+js/reveal.min.js
+>>>>>>> master
