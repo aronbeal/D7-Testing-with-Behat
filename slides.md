@@ -163,6 +163,10 @@ Why is this a problem?  Because of shared state - the existing DrupalExtension s
 
 This would signal many folks to stick with Behat 2
 
+<<<<<<< HEAD
 The DrupalExtension author has compensated for the change by having custom context authors extend the class RawDrupalContext and RawMinkContext.  These classes only have minimal feature sets - all the power lies in DrupalContext and MinkContext, which cannot be directly extended in the new version (they contain step definitions). 
 
 Those facts means you cannot leverage a function provided by another context without special work-arounds, which in our case were necessary.  Code efficiency dictated a need to gain access to other contexts at runtime in order to pass along test questions they are better equipped to answer.
+=======
+The DrupalExtension author has compensated for the change by having custom context authors extend the class RawDrupalContext and RawMinkContext.  These classes only have minimal feature sets - all the power lies in DrupalContext and MinkContext, which cannot be directly extended in the new version (they contain step definitions).   Those facts means you cannot leverage a function provided by another context without special work-arounds, which in our case were necessary.  Code efficiency dictated a need to gain access to other contexts at runtime in order to pass along test questions they are better equipped to answer.
+>>>>>>> gh-pages
