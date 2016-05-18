@@ -1,0 +1,306 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"mark",
+				"markdownText"
+			],
+			[
+				"mar",
+				"markdownText"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "expo",
+		"selected_items":
+		[
+			[
+				"expo",
+				"Export to HTML: Show Export Menu"
+			],
+			[
+				"exp",
+				"Export to HTML: Show Export Menu"
+			],
+			[
+				"packi",
+				"Package Control: Install Package"
+			],
+			[
+				"format",
+				"CodeFormatter: Format as Javascript Syntax"
+			],
+			[
+				"json for",
+				"JSON Reindent: reindent file or selection"
+			],
+			[
+				"json",
+				"JSON Reindent: reindent file or selection"
+			],
+			[
+				"for",
+				"CodeFormatter: Format as HTML Syntax"
+			],
+			[
+				"xml",
+				"Set Syntax: XML"
+			],
+			[
+				"form",
+				"CodeFormatter: Format as Javascript Syntax"
+			],
+			[
+				"sass",
+				"SassBeautify"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"ind",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"inden",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"pakc",
+				"Package Control: Install Package"
+			],
+			[
+				"html",
+				"Set Syntax: HTML5"
+			],
+			[
+				"ht",
+				"Set Syntax: HTML"
+			]
+		],
+		"width": 661.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/aronbeal/Sites/presentation"
+	],
+	"file_history":
+	[
+		"/Users/aronbeal/Desktop/example_context.php",
+		"/Users/aronbeal/Code/aronbeal.ca/app/components/youtube-iframeplayer.js",
+		"/Users/aronbeal/Code/aronbeal.ca/ember-cli-build.js",
+		"/Users/aronbeal/Code/aronbeal.ca/package.json",
+		"/Users/aronbeal/Code/aronbeal.ca/bower.json",
+		"/Users/aronbeal/Code/aronbeal.ca/config/environment.js",
+		"/Users/aronbeal/Code/aronbeal.ca/app/routes/application.js",
+		"/Users/aronbeal/Code/aronbeal.ca/app/styles/app.scss",
+		"/Users/aronbeal/Code/aronbeal.ca/app/controllers/blog/post.js",
+		"/Users/aronbeal/Code/aronbeal.ca/app/helpers/markdown-to-html.js",
+		"/Users/aronbeal/Code/aronbeal.ca/app/adapters/blog-post.js",
+		"/Users/aronbeal/Code/aronbeal.ca/app/models/blog-post.js",
+		"/Users/aronbeal/Code/aronbeal.ca/app/templates/blog/post.hbs",
+		"/Volumes/KOBOeReader/Digital Editions/manifest.xml",
+		"/Users/aronbeal/Code/aronbeal.ca/app/controllers/blog.js",
+		"/Users/aronbeal/Code/aronbeal.ca/app/serializers/blog-post.js",
+		"/Users/aronbeal/Code/aronbeal.ca/app/controllers/blog-post.js",
+		"/Users/aronbeal/Code/aronbeal.ca/app/controllers/post.js",
+		"/Users/aronbeal/Code/aronbeal.ca/app/models/project.js",
+		"/Users/aronbeal/Code/aronbeal.ca/Resume.sublime-project",
+		"/Users/aronbeal/Code/aronbeal.ca/app/router.js",
+		"/Users/aronbeal/Code/aronbeal.ca/app/routes/blog.js",
+		"/Users/aronbeal/Code/aronbeal.ca/app/components/anchor-link.js",
+		"/Users/aronbeal/Code/aronbeal.ca/app/adapters/application.js",
+		"/Users/aronbeal/Code/aronbeal.ca/app/templates/index.hbs",
+		"/Users/aronbeal/Code/aronbeal.ca/firebase.json",
+		"/Users/aronbeal/Code/aronbeal.ca/app/templates/components/anchor-link.hbs",
+		"/Users/aronbeal/Code/aronbeal.ca/app/transforms/blog-text.js",
+		"/Users/aronbeal/Code/aronbeal.ca/app/templates/blog/index.hbs",
+		"/Users/aronbeal/Code/aronbeal.ca/app/routes/projects.js",
+		"/Users/aronbeal/Code/aronbeal.ca/app/initializers/event-bus.js",
+		"/Users/aronbeal/Code/aronbeal.ca/app/styles/module/_m-blog.scss",
+		"/Users/aronbeal/Code/aronbeal.ca/app/helpers/code-highlighter.js",
+		"/Users/aronbeal/Code/aronbeal.ca/app/event",
+		"/Users/aronbeal/Code/aronbeal.ca/app/components/anim-header.js",
+		"/Users/aronbeal/Code/resume/src/sass/main.scss",
+		"/Users/aronbeal/Library/Application Support/Sublime Text 3/Packages/CodeFormatter/CodeFormatter.sublime-settings",
+		"/Volumes/web/custom.make",
+		"/Volumes/web/wordpress/wp-config.php",
+		"/Users/aronbeal/Library/Application Support/Knights of the Old Republic/swkotor.ini",
+		"/Users/aronbeal/Sites/httpd-vhosts.conf",
+		"/Users/aronbeal/Sites/wordpress/wp-config.php",
+		"/Users/aronbeal/Sites/default/index.html",
+		"/etc/apache2/httpd.conf",
+		"/usr/local/etc/dnsmasq.conf",
+		"/Users/aronbeal/.profile",
+		"/Users/aronbeal/Sites/resume/index.html",
+		"/Users/aronbeal/httpd-vhosts.conf",
+		"/Users/aronbeal/Downloads/Student Eval 1/iRememberContentProvider-Student1/.project",
+		"/Users/aronbeal/Downloads/Student Eval 1/iRemember-Student1/.project",
+		"/Users/aronbeal/Downloads/Student Eval 3/iRememberContentProvider/.project",
+		"/Users/aronbeal/Downloads/Student Eval 3/iRemember/.project",
+		"/Users/aronbeal/Downloads/Student Eval 2/iRememberContentProvider/.project",
+		"/Users/aronbeal/Downloads/Student Eval 2/iRemember/.project",
+		"/Volumes/video/Television shows/convert_avi.sh"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Users/aronbeal/Code/aronbeal.ca/app"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"event",
+			".</",
+			"Running ini",
+			"linkTo",
+			"link-to",
+			"eventBus",
+			"event-bus",
+			"event",
+			"migrate",
+			"+"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "Presentation.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 261.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
