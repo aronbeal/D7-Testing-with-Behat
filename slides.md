@@ -145,3 +145,20 @@ Now let’s look at a context containing step definitions.
 <div id="demo1-player"></div>
 
 ---------------------------------------------
+
+##Custom step definitions
+
+- Necessary to abstract testing language
+- Difficult due to inability to extend (step-defining) context classes, and inter-context communication discouraged. 
+- Need ability to leverage functionality of other contexts without extending
+
+Speaker Notes:
+Let’s look at that now.  We want to write custom step definitions that we know will conform to our clients’ language.  In older versions of Behat, this would be done by extending the appropriate drupal extension sub-context to get the relevant functionality for your test.
+
+Unfortunately, we’re in a bit of a growth stage right now.  Behat 3 makes it harder to leverage the work done in the Behat Drupal Extension directly.  Subcontexts, which were part of Behat 2 and which this extension was built around, have been removed.  Now everything is a Context, but inter-context communication is not (directly) supported - more on this in a bit.  You also cannot extend a step-defining context class - the classes with the phpdoc english snippets in them?  The minute you try to, you’ll get errors from php complaining that a function is already defined.  This occurs because Behat internals add any step definition tests to the environment, and then tries to add them again with any class that extends the step-defining one.  Step-defining context classes are therefore de-facto final.  Even as much as one step in the class is enough to make it so.
+
+Why is this a problem?  Because of shared state - the existing DrupalExtension stores references to objects that it creates during its execution, so they can be removed from the database at the completion of a scenario.  The way it has been written up to this point, however, is with subcontexts in mind.  Under the new paradigm, if a context creates a node for testing purposes, other contexts have no idea that node exists.  If another context logs in a user, that user doesn’t remain logged in for your custom context.
+
+This would signal many folks to stick with Behat 2
+
+The DrupalExtension author has compensated for the change by having custom context authors extend the class RawDrupalContext and RawMinkContext.  These classes only have minimal feature sets - all the power lies in DrupalContext and MinkContext, which cannot be directly extended in the new version (they contain step definitions).   Those facts means you cannot leverage a function provided by another context without special work-arounds, which in our case were necessary.  Code efficiency dictated a need to gain access to other contexts at runtime in order to pass along test questions they are better equipped to answer.
