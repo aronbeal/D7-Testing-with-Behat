@@ -1011,9 +1011,9 @@ Further reading: [Our current behat.yml file](https://bitbucket.org/eelzeedev/te
 </footer>
 
 <aside class="notes">
-Running our feature now, after adding the api flag, and properly setting the drupal_root din the DrupalExtension section, and teh base_url in the MinkExtension section, we see that it has finally passed muster.
+Running our feature now, after adding the api flag, and properly setting the drupal_root in the DrupalExtension section, and the base_url in the MinkExtension section, we see that it has finally passed muster.
 
-There are going to be multiple hiccups for you in the early stages here while you write tests.  The presentation will be linked to later - I'll leave you with the configuration file linked in the footer.  That file that serves as the basis of what we're currently using, which I hope will be useful as a reference of a known good value when you're monkeying with this stuff.  The section under Drupal\DrupalExtension will be the config settings specific to what we're working with here.  In particular, the api_driver line, the drupal: section, and the selectors section define the drupal api driver as our api driver of choice, and the selectors will be used later as a means of signifying to the subsystem the css wrapper class around the outside of our message elements, which it can use to see if certain messages will appear.
+There are going to be multiple hiccups for you in the early stages here while you write tests.  The presentation will be linked to later - I'll leave you with the configuration file linked in the footer.  That file that serves as the basis of what we're currently using, which I hope will be useful as a reference of a known good value when you're monkeying with this stuff.
 </aside>
 
 ---------------------------------------------
@@ -1047,7 +1047,9 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
 </code></pre>
 
 <aside class="notes">
-	First, we'll look at the Context file generated for us when we executed "behat init".  This file by itself doesn't actually have any step definitions yet. We'll add one now, but we're going to use Behat to help us with the function signature.</aside>
+	First, we'll look at the Context file generated for us when we executed "behat init".  You can see here that the file extends a class called RawDrupalExtension.  If you see something else instead, you've called init without proper settings in your behat.yml file, or possibly without a working Drupal installation installed at the drupal_root config location.  You should delete the entire features folder, fix your config, and run the init step again.
+
+ This file by itself doesn't actually have any step definitions yet. We'll add one now, but we're going to use Behat to help us with the function signature.</aside>
 
 
 ##New step: Lipsum article
