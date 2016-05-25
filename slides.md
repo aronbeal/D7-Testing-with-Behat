@@ -1293,7 +1293,7 @@ The first optimization we undertook was storing references to other contexts.  T
 	</code></pre>
 
 <aside class="notes">
-Here is a couple code snippets showing this in action.  In the interests of clarity, I've trimmed these functions down to the bare bones.
+Here is a couple code snippets showing this in action.  In the interests of clarity, I've trimmed these functions almost down to the bare bones.
 
 The first uses the @BeforeScenario hook, one of many hooks into the testing process, to capture references to the other contexts during scenario spool-up.  The second retrieves the stored context, and invokes one of its functions on this context's behalf.
 
@@ -1317,9 +1317,28 @@ The second optimization we performed deals with shared state.  We wanted to be a
 <aside class="notes">
 The third optimization came upon the heels of a realization.  You cannot extend step-defining context classes - if you try, you'll get a 'function is already defined' error, as Behat tries to bring the same method call in twice - once for the parent, and once for the inheriting child.
 
-We therefore began removing all significant functionality from the steps themselves, and moving it into the parent classes.  Unlike step-defining context classes, these parent classes could be extended, doing so would maximize function inheritance and reuse.  I liken it to the therapy ball shown above - the functionality lives centrally, with the steps themselves being mere nubs on the surface.  
+We therefore began removing all significant functionality from the steps themselves, and moving it into the parent classes.  Unlike step-defining context classes, these parent classes could be extended, and moving the functionality into the parent would maximize the possibility for function inheritance and reuse.  I liken it to the therapy ball shown above - the functionality lives centrally, with the steps themselves being reduced to mere nubs on the surface.
 
 In practice, this was a little bit overkill - it turned out that only the functionality that deals with stored state needs to live in non-step defining classes.  Still, this approach has proven very effective so far - we've taken this to the point where any context class that doesn't define steps, we declare as abstract, so we know immediately there won't be any steps in it, and any step defining class we declare as final, so as to take the inherit restrictions in the structure and make them formal.
 	</aside>
 
 
+##Optimization 4: Let custom steps and features live with the site repo
+
+<aside class="notes">
+The final optimization I'm going to mention tonight had to do with where context files and feature files live.  Adding features and context files requires changing of the Behat yaml configuration file every time it happens.  We wanted that to happen automatically - we wanted feature and context auto-discovery.  We expect our feature and context files to move in rough synchronization with the code they are intended to test, and we wanted a separation between the custom work we did that could apply to any Drupal site, and the work that would apply to a particular site.
+
+I ended up building a small cli tool using nodejs that would accomplish this for us.  It's not yet ready for general release, unfortunately - it hasn't been tested on anything but my local development platform so far, and I'm currently focusing my efforts on expanding the Behat Extension Driver code, so it may be awhile before it does.  Nevertheless, I mention it here, because I believe it to be an important realization that will benefit others who are considering how to structure their projects.
+	</aside>
+
+---------------------------------------------
+
+#Questions?
+
+- [Original](https://github.com/jhedstrom/drupalextension)
+- [Fork](https://github.com/aronbeal/drupalextension)
+<aside class="notes">
+That's about all I had.  Like I said, this whole project is a work in progress, and I'm sorry that I can't tell you the enhancements we have are polished and mature, or even that they'll be merged back into the original once they become so.  Nevertheless, my forked variant is freely available for you to download and try out if you like, and it's very usable even without the cli tooling I mentioned earlier.  I welcome thoughts and comments on the approach I've taken, and I hope it is useful to folks, whether it's merged back or not.
+
+Thanks!  [Questions]
+	</aside>
