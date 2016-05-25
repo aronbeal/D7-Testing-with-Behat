@@ -1,14 +1,16 @@
-<!doctype html>
+<!DOCTYPE doctype html>
 <html>
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Eelzee case study: D7 Testing with Behat</title>
-    <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/theme/white.css">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <title>
+        Eelzee case study: D7 Testing with Behat
+    </title>
+    <link href="css/reveal.css" rel="stylesheet">
+    <link href="css/theme/white.css" rel="stylesheet">
     <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link href="lib/css/zenburn.css" rel="stylesheet">
     <!-- Printing and PDF exports -->
     <script>
     var link = document.createElement('link');
@@ -17,27 +19,32 @@
     link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
     document.getElementsByTagName('head')[0].appendChild(link);
     </script>
+    </link>
+    </link>
+    </link>
+    </meta>
+    </meta>
 </head>
 
 <body>
     <div class="reveal">
         <div class="slides">
-        	<!-- Title -->
-            <section data-markdown="slides.md" 
-		            data-separator="^\n-------.*\n"  
-		         data-separator-vertical="^\n\n"  
-		         data-charset="iso-8859-15"
-            	data-separator-notes="^Speaker Notes:">
+            <!-- Title -->
+            <section data-charset="iso-8859-15" data-markdown="slides.md" data-separator="^\n-------.*\n" data-separator-notes="^Speaker Notes:" data-separator-vertical="^\n\n">
             </section>
         </div>
     </div>
-    <script src="lib/js/head.min.js"></script>
-    <script src="js/reveal.js"></script>
+    <script src="lib/js/head.min.js">
+    </script>
+    <script src="js/reveal.js">
+    </script>
     <script>
     // More info https://github.com/hakimel/reveal.js#configuration
     Reveal.initialize({
+        progress: true,
         history: true,
-
+        slideNumber: true,
+        center: false, //disable vertical centering of slides.
         // More info https://github.com/hakimel/reveal.js#dependencies
         dependencies: [{
             src: 'plugin/markdown/marked.js'
@@ -54,43 +61,6 @@
             }
         }]
     });
-    //pauses youtube embedded video
-    var player;
-var curTimer;
-function onYouTubeIframeAPIReady() {
-    player = new YT.Player('demo1-player', {
-        videoId: 'X4_ctRB3ipk',
-        playerVars: { 'rel':0, 'enablejsapi':1, 'autohide':0, 'wmode':'opaque'}
-    });
-    player.addEventListener('onReady', 'onPlayerReady');
-    player.addEventListener('onStateChange', 'onPlayerStateChange');
-}
-function onPlayerStateChange(event) {
-    var videoDuration = event.target.getDuration();
-    var curTime = event.target.getCurrentTime();
-    if ( curTime ) {
-        /**  Video Already Started  */
-
-        /**  Get video time remaining. */
-        videoDuration = videoDuration-curTime;
-
-        /**  Remove old 'setTimeout' function */
-        removeTimeout(curTimer);
-    }
-    /**
-        Note: The '.25' is time subtracted to stop video on last frame.
-        Adjust this as needed.
-    */
-    /**  Add/Re-Add 'setTimeout' function with video time remaining. */
-    curTimer = setTimeout(pauseVideo, (videoDuration-.25)*1000);
-}
-function removeTimeout(elTimer){
-    /** Remove old timer */
-    clearTimeout(elTimer);
-}
-function stopVideo() {
-    player.stopVideo();
-}
     </script>
 </body>
 

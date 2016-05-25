@@ -240,6 +240,38 @@ html:-moz-full-screen-ancestor {
     box-sizing: border-box;
 }
 
+.reveal .slides section {
+    .fail {
+        color: #C00;
+    }
+
+    .pass {
+        color: #0C0;
+    }
+
+    .emphasize {
+        font-size: 110%;
+        font-weight: bold;
+    }
+
+    code {
+        white-space: pre-wrap;
+
+        &.full {
+            max-height: none;
+        }
+
+        font-size: 90%;
+        font-family: "Liberation Mono", "Courier New",monospace;
+    }
+
+    mark {
+        font-weight: bold !important;
+        color: inherit;
+        background-color: inherit !important;
+    }
+}
+
 /*********************************************
  * CONTROLS
  *********************************************/
@@ -389,7 +421,6 @@ html:-moz-full-screen-ancestor {
 .reveal .slides {
     position: absolute;
     width: 100%;
-    height: 100%;
     top: 0;
     right: 0;
     bottom: 0;
@@ -419,30 +450,67 @@ html:-moz-full-screen-ancestor {
 }
 
 .reveal .slides > section footer {
+    clear: both;
     font-size: 50%;
-    text-align: right;
-    position: fixed;
-    bottom: 0;
-    right: 0;
 }
 
-.reveal .slides img {
-    max-height: 50%;
-    max-width: 80%;
-    background: #fff;
-    border-radius: 2px;
-    display: inline-block;
-    margin: 1rem;
-    position: relative;
+.reveal .slides section {
+    figure {
+        max-height: 50%;
+        max-width: 80%;
+        background: #fff;
+        display: inline-block;
+        margin: 1rem;
+        margin-bottom: 3rem;
+        padding: 1rem;
+        position: relative;
 
-    &.right {
-        float: right;
-        max-width: 50%;
+        figcaption {
+            background-color: #DDE;
+            font-size: smaller;
+        }
+
+        img {
+            border: 0;
+            margin: 0;
+            box-shadow: none;
+            max-width: 100%;
+            height: 75%;
+
+            &.rot180 {
+                transform: rotate(180deg);
+            }
+        }
+
+        &.hover {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+            &:hover {
+                box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+            }
+        }
+
+        &.polaroid {
+            box-shadow: 0 5px 5px #888888;
+
+            &:after {
+                box-sizing: border-box;
+            }
+        }
+
+        &.right {
+            float: right;
+            max-width: 50%;
+        }
+
+        &.left {
+            float: left;
+            max-width: 50%;
+        }
     }
 
-    &.left {
-        float: left;
-        max-width: 50%;
+    img:after {
+        content: "foo";
     }
 }
 
