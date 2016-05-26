@@ -388,8 +388,10 @@ html:-moz-full-screen-ancestor {
   padding: 1rem;
   position: relative; }
   .reveal .slides section figure figcaption {
-    background-color: #DDE;
-    font-size: smaller; }
+    color: #777;
+    font-style: italic;
+    font-size: 60%;
+    margin-top: 1em; }
   .reveal .slides section figure img {
     border: 0;
     margin: 0;
