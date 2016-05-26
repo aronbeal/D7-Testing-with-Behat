@@ -1,0 +1,182 @@
+{
+  "version": 1,
+  "width": 80,
+  "height": 24,
+  "duration": 13.556544,
+  "command": "/bin/bash",
+  "title": "",
+  "env": {
+    "TERM": "xterm-256color",
+    "SHELL": "/bin/bash"
+  },
+  "stdout": [
+    [
+      0.119054,
+      "\u001b[?1034h"
+    ],
+    [
+      0.000052,
+      "bash-3.2$ "
+    ],
+    [
+      2.127370,
+      "."
+    ],
+    [
+      0.143357,
+      "/"
+    ],
+    [
+      0.584267,
+      "b"
+    ],
+    [
+      0.095731,
+      "i"
+    ],
+    [
+      0.055802,
+      "n"
+    ],
+    [
+      0.240095,
+      "/"
+    ],
+    [
+      0.119953,
+      "b"
+    ],
+    [
+      0.120468,
+      "e"
+    ],
+    [
+      0.238958,
+      "h"
+    ],
+    [
+      0.152731,
+      "a"
+    ],
+    [
+      0.079866,
+      "t"
+    ],
+    [
+      0.127548,
+      "\r\n"
+    ],
+    [
+      1.154717,
+      "\u001b[1mFeature:\u001b[22m this test is to simply to get a single working feature.\r\n"
+    ],
+    [
+      0.000044,
+      "    In order to create a basis to work from\r\n    As a system developer\r\n    I want to have a standard by which I can draw from for future reference.\r\n\r\n"
+    ],
+    [
+      0.003241,
+      "  \u001b[1mScenario:\u001b[22m"
+    ],
+    [
+      0.000011,
+      " Get one working test"
+    ],
+    [
+      0.000196,
+      "                    \u001b[30m# features/feature1.feature:6\u001b[39m\r\n"
+    ],
+    [
+      6.013268,
+      "    \u001b[31mGiven I am logged in as an \"\u001b[39m\u001b[31;1mauthenticated user\u001b[39;22m\u001b[31m\"\u001b[39m"
+    ],
+    [
+      0.000085,
+      " \u001b[30m# Drupal\\DrupalExtension\\Context\\DrupalContext::assertAuthenticatedByRole()\u001b[39m\r\n"
+    ],
+    [
+      0.000135,
+      "\u001b[31m      No ability to generate random in Drupal\\Driver\\BlackboxDriver. Put `@api` into your feature and add an API driver (ex: `api_driver: drupal`) in behat.yml. (Drupal\\Driver\\Exception\\UnsupportedDriverActionException)\u001b[39m\r\n"
+    ],
+    [
+      0.005399,
+      "    \u001b[36mAnd I am on \"\u001b[39m\u001b[36;1m/\u001b[39;22m\u001b[36m\"\u001b[39m"
+    ],
+    [
+      0.000087,
+      "                                 \u001b[30m# Drupal\\DrupalExtension\\Context\\MinkContext::visit()\u001b[39m\r\n"
+    ],
+    [
+      0.002467,
+      "    \u001b[36mThen I should not see the text \"\u001b[39m\u001b[36;1mLogin Required\u001b[39;22m\u001b[36m\"\u001b[39m"
+    ],
+    [
+      0.000053,
+      " \u001b[30m# Drupal\\DrupalExtension\\Context\\MinkContext::assertNotTextVisible()\u001b[39m\r\n"
+    ],
+    [
+      0.006012,
+      "\r\n"
+    ],
+    [
+      0.011185,
+      "--- \u001b[31mFailed scenarios:\u001b[39m\r\n\r\n"
+    ],
+    [
+      0.000034,
+      "    \u001b[31mfeatures/feature1.feature:6\u001b[39m\r\n\r\n"
+    ],
+    [
+      0.000963,
+      "1 scenario"
+    ],
+    [
+      0.000026,
+      " (\u001b[31m1 failed\u001b[39m)"
+    ],
+    [
+      0.000005,
+      "\r\n"
+    ],
+    [
+      0.000187,
+      "3 steps"
+    ],
+    [
+      0.000069,
+      " (\u001b[31m1 failed\u001b[39m, \u001b[36m2 skipped\u001b[39m)"
+    ],
+    [
+      0.000007,
+      "\r\n"
+    ],
+    [
+      0.000867,
+      "0m6.50s (27.56Mb)\r\n"
+    ],
+    [
+      0.036365,
+      "bash-3.2$ "
+    ],
+    [
+      1.389493,
+      "e"
+    ],
+    [
+      0.231505,
+      "x"
+    ],
+    [
+      0.216042,
+      "i"
+    ],
+    [
+      0.119759,
+      "t"
+    ],
+    [
+      0.143849,
+      "\r\n"
+    ]
+  ]
+}

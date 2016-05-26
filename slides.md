@@ -302,24 +302,7 @@ We save that, and run it.
 
 
 ##<span class="fail">Our first feature file failure</span>
-
-<pre><code class="bash" data-trim>
-Arons-MacBook-Air:my_behat_test aronbeal$ ./bin/behat
-Feature: this test is to simply to get a single working feature.
-  In order to create a basis to work from
-  As a system developer
-  I want to have a standard by which I can draw from for future reference.
-
-  Scenario: Get one working test                    # features/my_first_feature.feature:6
-    Given I am logged in as an "authenticated user" # Drupal\DrupalExtension\Context\DrupalContext::assertAuthenticatedByRole()
-      No ability to generate random in Drupal\Driver\BlackboxDriver. Put `@api` into your feature and add an API driver (ex: `api_driver: drupal`) in behat.yml. (Drupal\Driver\Exception\UnsupportedDriverActionException)
-    And I am on "/"                                 # Drupal\DrupalExtension\Context\MinkContext::visit()
-    Then I should not see the text "Login Required" # Drupal\DrupalExtension\Context\MinkContext::assertNotTextVisible()
-
---- Failed scenarios:
-
-    features/my_first_feature.feature:6
-	</code></pre>
+<div id="asciicast-feature1-fail"></div>
 
 <aside class="notes">
 We get back the above output. What went wrong?  Well, the default configuration in behat.yml gives you the configuration assuming you're going to do black box testing.  Our scenario is set up for that, but black box can't do very much.  I can't tell you its limits precisely, because we moved on from it almost immediately.
@@ -349,23 +332,7 @@ Feature: this test is to simply to get a single working feature.
 
 ##<span class="pass">Feature: PASSED</span>
 
-<pre><code class="bash" data-trim>
-Arons-MacBook-Air:my_behat_test aronbeal$ ./bin/behat
-Feature: this test is to simply to get a single working feature.
-  In order to create a basis to work from
-  As a system developer
-  I want to have a standard by which I can draw from for future reference.
-
-  @api
-  Scenario: Get one working test                    # features/my_first_feature.feature:7
-    Given I am logged in as an "authenticated user" # Drupal\DrupalExtension\Context\DrupalContext::assertAuthenticatedByRole()
-    And I am on "/"                                 # Drupal\DrupalExtension\Context\MinkContext::visit()
-    Then I should not see the text "Login Required" # Drupal\DrupalExtension\Context\MinkContext::assertNotTextVisible()
-
-1 scenario (1 passed)
-3 steps (3 passed)
-0m6.64s (27.94Mb)
-	</code></pre>
+<div id='asciicast-feature1-pass'></div>
 
 <footer>
 Further reading: [Our current behat.yml file](https://bitbucket.org/eelzeedev/testing/src/ab82ffce4105a71d5790927e09d247ce78888dc4/behat/default.behat.yml?at=master&fileviewer=file-view-default)
@@ -373,6 +340,36 @@ Further reading: [Our current behat.yml file](https://bitbucket.org/eelzeedev/te
 
 <aside class="notes">
 Running our feature now, after adding the api flag, and properly setting the drupal_root in the DrupalExtension section, and the base_url in the MinkExtension section, we see that it has finally passed muster.
+	</aside>
+
+
+##Reverse condition to fail intentionally
+
+<pre><code class="gherkin" data-trim data-noescape>
+
+Feature: this test is to simply to get a single working feature.
+	In order to create a basis to work from
+	As a system developer
+	I want to have a standard by which I can draw from for future reference.
+
+	@api
+	Scenario:	Get one working test
+		Given I am logged in as an "authenticated user"
+		And I am on "/"
+		Then I should <mark class='fragment fade-out'>not</mark> see the text "Login Required"
+
+</code></pre>
+
+<aside class="notes">
+Just to show that this is actually doing something, let's reverse the condition.  We'll remove the 'not' from the above test [click], so we are testing something that should be false.
+	</aside>
+
+
+<div id='asciicast-feature1-fail2'></div>
+<aside class="notes">
+And ... wait for it...
+
+There we go, failing as expected.
 
 There are going to be multiple hiccups for you in the early stages here while you write tests.  The presentation will be linked to later - I'll leave you with the configuration file linked in the footer.  That file that serves as the basis of what we're currently using, which I hope will be useful as a reference of a known good value when you're monkeying with this stuff.
 </aside>
