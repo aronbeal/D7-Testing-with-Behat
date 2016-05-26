@@ -20,7 +20,7 @@
     document.getElementsByTagName('head')[0].appendChild(link);
     </script>
     <!-- asciinema player -->
-    <link rel="stylesheet" type="text/css" href="/css/asciinema-player.css" />
+    <link rel="stylesheet" type="text/css" href="css/asciinema-player.css" />
     </link>
     </link>
     </link>
@@ -68,7 +68,7 @@
         //load all asciinema videos
         //
         ['asciicast-install'].forEach(function(k){
-            asciinema.player.js.CreatePlayer(k, '/asciinema/'+k+'.json', { fontSize: 'medium', width: 80, height: 20, theme: 'monokai' });
+            asciinema.player.js.CreatePlayer(k, 'asciinema/'+k+'.json', { fontSize: 'medium', width: 80, height: 20, theme: 'monokai' });
         });
         // asciinema.player.js.CreatePlayer('asciicast-install', '/asciinema/asciicast-install.json');
     });
