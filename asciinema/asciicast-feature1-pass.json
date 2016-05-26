@@ -1,0 +1,178 @@
+{
+  "version": 1,
+  "width": 80,
+  "height": 24,
+  "duration": 13.329646,
+  "command": "/bin/bash",
+  "title": "",
+  "env": {
+    "TERM": "xterm-256color",
+    "SHELL": "/bin/bash"
+  },
+  "stdout": [
+    [
+      0.058451,
+      "\u001b[?1034hbash-3.2$ "
+    ],
+    [
+      1.663485,
+      "."
+    ],
+    [
+      0.047829,
+      "/"
+    ],
+    [
+      0.272285,
+      "b"
+    ],
+    [
+      0.135531,
+      "i"
+    ],
+    [
+      0.056397,
+      "n"
+    ],
+    [
+      0.231519,
+      "/"
+    ],
+    [
+      0.200405,
+      "b"
+    ],
+    [
+      0.143524,
+      "e"
+    ],
+    [
+      0.160101,
+      "h"
+    ],
+    [
+      0.063870,
+      "a"
+    ],
+    [
+      0.088831,
+      "t"
+    ],
+    [
+      0.191209,
+      "\r\n"
+    ],
+    [
+      1.066423,
+      "\u001b[1mFeature:\u001b[22m"
+    ],
+    [
+      0.000015,
+      " this test is to simply to get a single working feature.\r\n"
+    ],
+    [
+      0.000049,
+      "    In order to create a basis to work from\r\n"
+    ],
+    [
+      0.000036,
+      "    As a system developer\r\n    I want to have a standard by which I can draw from for future reference.\r\n"
+    ],
+    [
+      0.000020,
+      "\r\n"
+    ],
+    [
+      0.003136,
+      "  \u001b[36m@api\u001b[39m\r\n"
+    ],
+    [
+      0.000024,
+      "  \u001b[1mScenario:\u001b[22m"
+    ],
+    [
+      0.000020,
+      " Get one working test"
+    ],
+    [
+      0.000134,
+      "                    \u001b[30m# features/feature1.feature:7\u001b[39m\r\n"
+    ],
+    [
+      6.573988,
+      "    \u001b[32mGiven I am logged in as an \"\u001b[39m\u001b[32;1mauthenticated user\u001b[39;22m\u001b[32m\"\u001b[39m"
+    ],
+    [
+      0.000258,
+      " \u001b[30m# Drupal\\DrupalExtension\\Context\\DrupalContext::assertAuthenticatedByRole()\u001b[39m\r\n"
+    ],
+    [
+      0.068471,
+      "    \u001b[32mAnd I am on \"\u001b[39m\u001b[32;1m/\u001b[39;22m\u001b[32m\"\u001b[39m"
+    ],
+    [
+      0.000080,
+      "                                 \u001b[30m# Drupal\\DrupalExtension\\Context\\MinkContext::visit()\u001b[39m\r\n"
+    ],
+    [
+      0.010838,
+      "    \u001b[32mThen I should not see the text \"\u001b[39m\u001b[32;1mLogin Required\u001b[39;22m\u001b[32m\"\u001b[39m"
+    ],
+    [
+      0.000149,
+      " \u001b[30m# Drupal\\DrupalExtension\\Context\\MinkContext::assertNotTextVisible()\u001b[39m\r\n"
+    ],
+    [
+      0.104298,
+      "\r\n"
+    ],
+    [
+      0.012739,
+      "1 scenario"
+    ],
+    [
+      0.000051,
+      " (\u001b[32m1 passed\u001b[39m)"
+    ],
+    [
+      0.000020,
+      "\r\n"
+    ],
+    [
+      0.000233,
+      "3 steps"
+    ],
+    [
+      0.000065,
+      " (\u001b[32m3 passed\u001b[39m)\r\n"
+    ],
+    [
+      0.000596,
+      "0m7.17s (27.98Mb)\r\n"
+    ],
+    [
+      0.088262,
+      "bash-3.2$ "
+    ],
+    [
+      1.094824,
+      "e"
+    ],
+    [
+      0.303685,
+      "x"
+    ],
+    [
+      0.279580,
+      "i"
+    ],
+    [
+      0.143576,
+      "t"
+    ],
+    [
+      0.247978,
+      "\r\n"
+    ]
+  ]
+}

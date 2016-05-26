@@ -1,0 +1,122 @@
+{
+  "version": 1,
+  "width": 80,
+  "height": 24,
+  "duration": 10.649281,
+  "command": "/bin/bash",
+  "title": "",
+  "env": {
+    "TERM": "xterm-256color",
+    "SHELL": "/bin/bash"
+  },
+  "stdout": [
+    [
+      0.071481,
+      "\u001b[?1034hbash-3.2$ "
+    ],
+    [
+      2.229451,
+      "."
+    ],
+    [
+      0.055483,
+      "/"
+    ],
+    [
+      0.238957,
+      "b"
+    ],
+    [
+      0.088610,
+      "i"
+    ],
+    [
+      0.072340,
+      "n"
+    ],
+    [
+      0.272378,
+      "/"
+    ],
+    [
+      0.184026,
+      "b"
+    ],
+    [
+      0.111076,
+      "e"
+    ],
+    [
+      0.233025,
+      "hat "
+    ],
+    [
+      0.759887,
+      "-"
+    ],
+    [
+      0.142711,
+      "-"
+    ],
+    [
+      0.160889,
+      "i"
+    ],
+    [
+      0.064056,
+      "n"
+    ],
+    [
+      0.103753,
+      "i"
+    ],
+    [
+      0.120492,
+      "t"
+    ],
+    [
+      0.535361,
+      "\r\n"
+    ],
+    [
+      1.132136,
+      "\u001b[32m+d\u001b[39m features - place your *.feature files here\r\n"
+    ],
+    [
+      0.000390,
+      "\u001b[32m+d\u001b[39m features/bootstrap - place your context classes here\r\n"
+    ],
+    [
+      0.000433,
+      "\u001b[32m+f\u001b[39m features/bootstrap/FeatureContext.php - place your definitions, transformations and hooks here\r\n"
+    ],
+    [
+      0.014338,
+      "\r\n"
+    ],
+    [
+      0.020028,
+      "bash-3.2$ "
+    ],
+    [
+      3.377268,
+      "e"
+    ],
+    [
+      0.286968,
+      "x"
+    ],
+    [
+      0.142762,
+      "i"
+    ],
+    [
+      0.097041,
+      "t"
+    ],
+    [
+      0.111864,
+      "\r\n"
+    ]
+  ]
+}

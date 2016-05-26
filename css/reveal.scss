@@ -466,8 +466,10 @@ html:-moz-full-screen-ancestor {
         position: relative;
 
         figcaption {
-            background-color: #DDE;
-            font-size: smaller;
+            color: #777;
+            font-style: italic;
+            font-size: 60%;
+            margin-top: 1em;
         }
 
         img {
