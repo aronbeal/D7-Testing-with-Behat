@@ -67,7 +67,7 @@
     Reveal.addEventListener( 'ready', function( event ) {
         //load all asciinema videos
         //
-        ['asciicast-install'].forEach(function(k){
+        ['asciicast-install', 'asciicast-init', 'asciicast-show-commands'].forEach(function(k){
             asciinema.player.js.CreatePlayer(k, 'asciinema/'+k+'.json', { fontSize: 'medium', width: 80, height: 20, theme: 'monokai' });
         });
         // asciinema.player.js.CreatePlayer('asciicast-install', '/asciinema/asciicast-install.json');
