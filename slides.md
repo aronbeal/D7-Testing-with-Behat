@@ -206,8 +206,9 @@ There's more examples of feature construction in the documentation, but for now,
 
 
 ##Demo
+<div id="asciicast-install"></div>
 
-<iframe width="560" height="315" data-src="https://www.youtube.com/embed/X4_ctRB3ipk?rel=0" frameborder="0" allowfullscreen></iframe>
+<!-- <iframe width="560" height="315" data-src="https://www.youtube.com/embed/X4_ctRB3ipk?rel=0" frameborder="0" allowfullscreen></iframe> -->
 
 <footer>
 - [DrupalExtension installation docs](https://behat-drupal-extension.readthedocs.io/en/3.1/localinstall.html)

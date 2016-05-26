@@ -1,0 +1,1166 @@
+{
+  "version": 1,
+  "width": 80,
+  "height": 24,
+  "duration": 54.810763,
+  "command": "/bin/bash",
+  "title": "",
+  "env": {
+    "TERM": "xterm-256color",
+    "SHELL": "/bin/bash"
+  },
+  "stdout": [
+    [
+      0.061982,
+      "\u001b[?1034hbash-3.2$ "
+    ],
+    [
+      0.371825,
+      "m"
+    ],
+    [
+      0.095504,
+      "k"
+    ],
+    [
+      0.256831,
+      "d"
+    ],
+    [
+      0.095314,
+      "i"
+    ],
+    [
+      0.096692,
+      "r"
+    ],
+    [
+      0.087626,
+      " "
+    ],
+    [
+      0.143758,
+      "b"
+    ],
+    [
+      0.200147,
+      "e"
+    ],
+    [
+      0.166720,
+      "h"
+    ],
+    [
+      0.081028,
+      "a"
+    ],
+    [
+      0.056299,
+      "t"
+    ],
+    [
+      0.215877,
+      "_"
+    ],
+    [
+      0.159898,
+      "t"
+    ],
+    [
+      0.119980,
+      "e"
+    ],
+    [
+      0.032194,
+      "s"
+    ],
+    [
+      0.112169,
+      "t"
+    ],
+    [
+      0.231824,
+      "\r\n"
+    ],
+    [
+      0.006710,
+      "bash-3.2$ "
+    ],
+    [
+      0.601053,
+      "c"
+    ],
+    [
+      0.127780,
+      "d"
+    ],
+    [
+      0.184195,
+      " "
+    ],
+    [
+      0.174915,
+      "b"
+    ],
+    [
+      0.167945,
+      "e"
+    ],
+    [
+      0.145002,
+      "h"
+    ],
+    [
+      0.104106,
+      "a"
+    ],
+    [
+      0.047979,
+      "t"
+    ],
+    [
+      0.167636,
+      "_"
+    ],
+    [
+      0.168247,
+      "t"
+    ],
+    [
+      0.104137,
+      "e"
+    ],
+    [
+      0.119470,
+      "s"
+    ],
+    [
+      0.064286,
+      "t"
+    ],
+    [
+      0.271193,
+      "\r\n"
+    ],
+    [
+      0.000301,
+      "bash-3.2$ "
+    ],
+    [
+      0.296785,
+      "e"
+    ],
+    [
+      0.191593,
+      "c"
+    ],
+    [
+      0.087693,
+      "h"
+    ],
+    [
+      0.080975,
+      "o"
+    ],
+    [
+      0.079849,
+      " "
+    ],
+    [
+      0.855845,
+      "'"
+    ],
+    [
+      0.273415,
+      "{"
+    ],
+    [
+      0.000015,
+      "\r\n"
+    ],
+    [
+      0.000331,
+      "\u003e "
+    ],
+    [
+      0.000011,
+      " "
+    ],
+    [
+      0.000048,
+      " "
+    ],
+    [
+      0.000015,
+      "  "
+    ],
+    [
+      0.000008,
+      "\""
+    ],
+    [
+      0.000023,
+      "r"
+    ],
+    [
+      0.000008,
+      "e"
+    ],
+    [
+      0.000014,
+      "q"
+    ],
+    [
+      0.000020,
+      "u"
+    ],
+    [
+      0.000007,
+      "i"
+    ],
+    [
+      0.000152,
+      "re\": {\r\n"
+    ],
+    [
+      0.000446,
+      "\u003e  "
+    ],
+    [
+      0.000016,
+      "  "
+    ],
+    [
+      0.000008,
+      " "
+    ],
+    [
+      0.000029,
+      " "
+    ],
+    [
+      0.000017,
+      "  "
+    ],
+    [
+      0.000036,
+      " \""
+    ],
+    [
+      0.000009,
+      "d"
+    ],
+    [
+      0.000027,
+      "r"
+    ],
+    [
+      0.000007,
+      "u"
+    ],
+    [
+      0.000032,
+      "p"
+    ],
+    [
+      0.000013,
+      "a"
+    ],
+    [
+      0.000026,
+      "l"
+    ],
+    [
+      0.000044,
+      "/d"
+    ],
+    [
+      0.000008,
+      "r"
+    ],
+    [
+      0.000023,
+      "u"
+    ],
+    [
+      0.000034,
+      "p"
+    ],
+    [
+      0.000009,
+      "a"
+    ],
+    [
+      0.000039,
+      "l"
+    ],
+    [
+      0.000058,
+      "-"
+    ],
+    [
+      0.000010,
+      "e"
+    ],
+    [
+      0.000030,
+      "x"
+    ],
+    [
+      0.000021,
+      "t"
+    ],
+    [
+      0.000051,
+      "e"
+    ],
+    [
+      0.000010,
+      "n"
+    ],
+    [
+      0.000027,
+      "s"
+    ],
+    [
+      0.000009,
+      "i"
+    ],
+    [
+      0.000064,
+      "o"
+    ],
+    [
+      0.000009,
+      "n"
+    ],
+    [
+      0.000032,
+      "\""
+    ],
+    [
+      0.000048,
+      ":"
+    ],
+    [
+      0.000069,
+      " "
+    ],
+    [
+      0.000029,
+      "\""
+    ],
+    [
+      0.000043,
+      "~"
+    ],
+    [
+      0.000016,
+      "3"
+    ],
+    [
+      0.000026,
+      "."
+    ],
+    [
+      0.000032,
+      "0"
+    ],
+    [
+      0.000033,
+      "\"\r\n"
+    ],
+    [
+      0.000330,
+      "\u003e  "
+    ],
+    [
+      0.000011,
+      " "
+    ],
+    [
+      0.000007,
+      " "
+    ],
+    [
+      0.000028,
+      " "
+    ],
+    [
+      0.000008,
+      "}"
+    ],
+    [
+      0.000007,
+      ","
+    ],
+    [
+      0.000007,
+      "\r\n"
+    ],
+    [
+      0.000178,
+      "\u003e "
+    ],
+    [
+      0.000009,
+      "  "
+    ],
+    [
+      0.000024,
+      " "
+    ],
+    [
+      0.000008,
+      " "
+    ],
+    [
+      0.000024,
+      "\""
+    ],
+    [
+      0.000008,
+      "c"
+    ],
+    [
+      0.000007,
+      "o"
+    ],
+    [
+      0.000025,
+      "n"
+    ],
+    [
+      0.000008,
+      "f"
+    ],
+    [
+      0.000025,
+      "i"
+    ],
+    [
+      0.000008,
+      "g"
+    ],
+    [
+      0.000029,
+      "\""
+    ],
+    [
+      0.000008,
+      ":"
+    ],
+    [
+      0.000033,
+      " "
+    ],
+    [
+      0.000008,
+      "{"
+    ],
+    [
+      0.000008,
+      "\r\n"
+    ],
+    [
+      0.000179,
+      "\u003e  "
+    ],
+    [
+      0.000010,
+      " "
+    ],
+    [
+      0.000028,
+      " "
+    ],
+    [
+      0.000053,
+      " "
+    ],
+    [
+      0.000009,
+      " "
+    ],
+    [
+      0.000016,
+      " "
+    ],
+    [
+      0.000024,
+      " "
+    ],
+    [
+      0.000007,
+      " "
+    ],
+    [
+      0.000024,
+      "\""
+    ],
+    [
+      0.000007,
+      "b"
+    ],
+    [
+      0.000064,
+      "i"
+    ],
+    [
+      0.000009,
+      "n"
+    ],
+    [
+      0.000035,
+      "-"
+    ],
+    [
+      0.000007,
+      "d"
+    ],
+    [
+      0.000025,
+      "i"
+    ],
+    [
+      0.000021,
+      "r"
+    ],
+    [
+      0.000032,
+      "\":"
+    ],
+    [
+      0.000022,
+      " "
+    ],
+    [
+      0.000007,
+      "\""
+    ],
+    [
+      0.000028,
+      "b"
+    ],
+    [
+      0.000021,
+      "i"
+    ],
+    [
+      0.000021,
+      "n"
+    ],
+    [
+      0.000022,
+      "/"
+    ],
+    [
+      0.000023,
+      "\""
+    ],
+    [
+      0.000007,
+      "\r\n"
+    ],
+    [
+      0.000103,
+      "\u003e "
+    ],
+    [
+      0.000008,
+      " "
+    ],
+    [
+      0.000007,
+      " "
+    ],
+    [
+      0.000025,
+      " "
+    ],
+    [
+      0.000009,
+      " }"
+    ],
+    [
+      0.000006,
+      "\r\n"
+    ],
+    [
+      0.000084,
+      "\u003e "
+    ],
+    [
+      0.000008,
+      "}"
+    ],
+    [
+      0.538830,
+      "'"
+    ],
+    [
+      0.479861,
+      " "
+    ],
+    [
+      0.160094,
+      "\u003e"
+    ],
+    [
+      0.135529,
+      " "
+    ],
+    [
+      0.320521,
+      "c"
+    ],
+    [
+      0.079824,
+      "o"
+    ],
+    [
+      0.064295,
+      "m"
+    ],
+    [
+      0.055761,
+      "p"
+    ],
+    [
+      0.072130,
+      "o"
+    ],
+    [
+      0.391981,
+      "s"
+    ],
+    [
+      0.047704,
+      "e"
+    ],
+    [
+      0.056224,
+      "r"
+    ],
+    [
+      0.216372,
+      "."
+    ],
+    [
+      0.167652,
+      "j"
+    ],
+    [
+      0.119802,
+      "s"
+    ],
+    [
+      0.081948,
+      "o"
+    ],
+    [
+      0.046140,
+      "n"
+    ],
+    [
+      0.263780,
+      "\r\n"
+    ],
+    [
+      0.000729,
+      "bash-3.2$ "
+    ],
+    [
+      2.254748,
+      "c"
+    ],
+    [
+      0.080723,
+      "o"
+    ],
+    [
+      0.063814,
+      "m"
+    ],
+    [
+      0.080069,
+      "p"
+    ],
+    [
+      0.055989,
+      "o"
+    ],
+    [
+      0.303736,
+      "s"
+    ],
+    [
+      0.087181,
+      "e"
+    ],
+    [
+      0.056843,
+      "r"
+    ],
+    [
+      0.736094,
+      " "
+    ],
+    [
+      0.408067,
+      "i"
+    ],
+    [
+      0.064042,
+      "n"
+    ],
+    [
+      0.127916,
+      "s"
+    ],
+    [
+      0.096005,
+      "t"
+    ],
+    [
+      0.183890,
+      "a"
+    ],
+    [
+      0.399246,
+      "l"
+    ],
+    [
+      0.151715,
+      "l"
+    ],
+    [
+      0.288555,
+      "\r\n"
+    ],
+    [
+      0.372892,
+      "\u001b[32mLoading composer repositories with package information\u001b[39m\r\n"
+    ],
+    [
+      0.971655,
+      "\u001b[32mUpdating dependencies (including require-dev)\u001b[39m\r\n"
+    ],
+    [
+      19.959742,
+      "  - Installing \u001b[32msymfony/dependency-injection\u001b[39m (\u001b[33mv3.0.6\u001b[39m)\r\n"
+    ],
+    [
+      0.064876,
+      "    Loading from cache\r\n"
+    ],
+    [
+      0.201663,
+      "\r\n"
+    ],
+    [
+      0.002586,
+      "  - Installing \u001b[32msymfony/process\u001b[39m (\u001b[33mv3.0.6\u001b[39m)\r\n"
+    ],
+    [
+      0.035155,
+      "    Loading from cache\r\n"
+    ],
+    [
+      0.043223,
+      "\r\n"
+    ],
+    [
+      0.001744,
+      "  - Installing \u001b[32mdrupal/drupal-driver\u001b[39m (\u001b[33mv1.1.6\u001b[39m)\r\n"
+    ],
+    [
+      0.033763,
+      "    Loading from cache\r\n"
+    ],
+    [
+      0.057893,
+      "\r\n"
+    ],
+    [
+      0.002600,
+      "  - Installing \u001b[32msymfony/filesystem\u001b[39m (\u001b[33mv3.0.6\u001b[39m)\r\n"
+    ],
+    [
+      0.064866,
+      "    Loading from cache\r\n"
+    ],
+    [
+      0.082318,
+      "\r\n"
+    ],
+    [
+      0.002373,
+      "  - Installing \u001b[32msymfony/config\u001b[39m (\u001b[33mv3.0.6\u001b[39m)\r\n"
+    ],
+    [
+      0.035803,
+      "    Loading from cache\r\n"
+    ],
+    [
+      0.075257,
+      "\r\n"
+    ],
+    [
+      0.002327,
+      "  - Installing \u001b[32msymfony/css-selector\u001b[39m (\u001b[33mv3.0.6\u001b[39m)\r\n"
+    ],
+    [
+      0.039693,
+      "    Loading from cache\r\n"
+    ],
+    [
+      0.063716,
+      "\r\n"
+    ],
+    [
+      0.002217,
+      "  - Installing \u001b[32mbehat/mink\u001b[39m (\u001b[33mv1.7.1\u001b[39m)\r\n"
+    ],
+    [
+      0.047204,
+      "    Loading from cache\r\n"
+    ],
+    [
+      0.070704,
+      "\r\n"
+    ],
+    [
+      0.002407,
+      "  - Installing \u001b[32msymfony/class-loader\u001b[39m (\u001b[33mv3.0.6\u001b[39m)\r\n"
+    ],
+    [
+      0.038713,
+      "    Loading from cache\r\n"
+    ],
+    [
+      0.146565,
+      "\r\n"
+    ],
+    [
+      0.002687,
+      "  - Installing \u001b[32msymfony/yaml\u001b[39m (\u001b[33mv3.0.6\u001b[39m)\r\n"
+    ],
+    [
+      0.171726,
+      "    Loading from cache\r\n"
+    ],
+    [
+      0.049438,
+      "\r\n"
+    ],
+    [
+      0.002677,
+      "  - Installing \u001b[32msymfony/polyfill-mbstring\u001b[39m (\u001b[33mv1.2.0\u001b[39m)\r\n"
+    ],
+    [
+      0.033853,
+      "    Loading from cache\r\n"
+    ],
+    [
+      0.040582,
+      "\r\n"
+    ],
+    [
+      0.005415,
+      "  - Installing \u001b[32msymfony/translation\u001b[39m (\u001b[33mv3.0.6\u001b[39m)\r\n"
+    ],
+    [
+      0.038544,
+      "    Loading from cache\r\n"
+    ],
+    [
+      0.114065,
+      "\r\n"
+    ],
+    [
+      0.004486,
+      "  - Installing \u001b[32msymfony/event-dispatcher\u001b[39m (\u001b[33mv3.0.6\u001b[39m)\r\n"
+    ],
+    [
+      0.035482,
+      "    Loading from cache\r\n"
+    ],
+    [
+      0.050476,
+      "\r\n"
+    ],
+    [
+      0.005417,
+      "  - Installing \u001b[32msymfony/console\u001b[39m (\u001b[33mv3.0.6\u001b[39m)\r\n"
+    ],
+    [
+      0.034201,
+      "    Loading from cache\r\n"
+    ],
+    [
+      0.136637,
+      "\r\n"
+    ],
+    [
+      0.005001,
+      "  - Installing \u001b[32mbehat/transliterator\u001b[39m (\u001b[33mv1.1.0\u001b[39m)\r\n"
+    ],
+    [
+      0.036271,
+      "    Loading from cache\r\n"
+    ],
+    [
+      0.092609,
+      "\r\n"
+    ],
+    [
+      0.004437,
+      "  - Installing \u001b[32mbehat/gherkin\u001b[39m (\u001b[33mv4.4.1\u001b[39m)\r\n"
+    ],
+    [
+      0.036807,
+      "    Loading from cache\r\n"
+    ],
+    [
+      0.083079,
+      "\r\n"
+    ],
+    [
+      0.004338,
+      "  - Installing \u001b[32mbehat/behat\u001b[39m (\u001b[33mv3.1.0\u001b[39m)\r\n"
+    ],
+    [
+      0.040963,
+      "    Loading from cache\r\n"
+    ],
+    [
+      0.211203,
+      "\r\n"
+    ],
+    [
+      0.005264,
+      "  - Installing \u001b[32mbehat/mink-extension\u001b[39m (\u001b[33mv2.2\u001b[39m)\r\n"
+    ],
+    [
+      0.033364,
+      "    Loading from cache\r\n"
+    ],
+    [
+      0.057651,
+      "\r\n"
+    ],
+    [
+      0.006628,
+      "  - Installing \u001b[32minstaclick/php-webdriver\u001b[39m (\u001b[33m1.4.3\u001b[39m)\r\n"
+    ],
+    [
+      0.043008,
+      "    Loading from cache\r\n"
+    ],
+    [
+      0.055033,
+      "\r\n"
+    ],
+    [
+      0.005415,
+      "  - Installing \u001b[32mbehat/mink-selenium2-driver\u001b[39m (\u001b[33mv1.3.1\u001b[39m)\r\n"
+    ],
+    [
+      0.038482,
+      "    Loading from cache\r\n"
+    ],
+    [
+      0.036226,
+      "\r\n"
+    ],
+    [
+      0.005235,
+      "  - Installing \u001b[32mguzzlehttp/promises\u001b[39m (\u001b[33m1.2.0\u001b[39m)\r\n"
+    ],
+    [
+      0.033331,
+      "    Loading from cache\r\n"
+    ],
+    [
+      0.040777,
+      "\r\n"
+    ],
+    [
+      0.006690,
+      "  - Installing \u001b[32mpsr/http-message\u001b[39m (\u001b[33m1.0\u001b[39m)\r\n"
+    ],
+    [
+      0.045995,
+      "    Loading from cache\r\n"
+    ],
+    [
+      0.056293,
+      "\r\n"
+    ],
+    [
+      0.005644,
+      "  - Installing \u001b[32mguzzlehttp/psr7\u001b[39m (\u001b[33m1.3.0\u001b[39m)\r\n"
+    ],
+    [
+      0.035488,
+      "    Loading from cache\r\n"
+    ],
+    [
+      0.049691,
+      "\r\n"
+    ],
+    [
+      0.006665,
+      "  - Installing \u001b[32mguzzlehttp/guzzle\u001b[39m (\u001b[33m6.2.0\u001b[39m)\r\n"
+    ],
+    [
+      0.036312,
+      "    Loading from cache\r\n"
+    ],
+    [
+      0.047615,
+      "\r\n"
+    ],
+    [
+      0.006169,
+      "  - Installing \u001b[32msymfony/dom-crawler\u001b[39m (\u001b[33mv3.0.6\u001b[39m)\r\n"
+    ],
+    [
+      0.036886,
+      "    Loading from cache\r\n"
+    ],
+    [
+      0.045175,
+      "\r\n"
+    ],
+    [
+      0.006763,
+      "  - Installing \u001b[32msymfony/browser-kit\u001b[39m (\u001b[33mv3.0.6\u001b[39m)\r\n"
+    ],
+    [
+      0.034902,
+      "    Loading from cache\r\n"
+    ],
+    [
+      0.035278,
+      "\r\n"
+    ],
+    [
+      0.007231,
+      "  - Installing \u001b[32mfabpot/goutte\u001b[39m (\u001b[33mv3.1.2\u001b[39m)\r\n"
+    ],
+    [
+      0.022484,
+      "    Loading from cache\r\n"
+    ],
+    [
+      0.038617,
+      "\r\n"
+    ],
+    [
+      0.007158,
+      "  - Installing \u001b[32mbehat/mink-browserkit-driver\u001b[39m (\u001b[33mv1.3.2\u001b[39m)\r\n"
+    ],
+    [
+      0.035612,
+      "    Loading from cache\r\n"
+    ],
+    [
+      0.058142,
+      "\r\n"
+    ],
+    [
+      0.007144,
+      "  - Installing \u001b[32mbehat/mink-goutte-driver\u001b[39m (\u001b[33mv1.2.1\u001b[39m)\r\n"
+    ],
+    [
+      0.011007,
+      "    Loading from cache\r\n"
+    ],
+    [
+      0.040359,
+      "\r\n"
+    ],
+    [
+      0.006102,
+      "  - Installing \u001b[32mdrupal/drupal-extension\u001b[39m (\u001b[33mv3.1.5\u001b[39m)\r\n"
+    ],
+    [
+      0.091856,
+      "    Loading from cache\r\n"
+    ],
+    [
+      0.113678,
+      "\r\n"
+    ],
+    [
+      1.312199,
+      "symfony/dependency-injection suggests installing symfony/expression-language (For using expressions in service container configuration)\r\n"
+    ],
+    [
+      0.000042,
+      "symfony/dependency-injection suggests installing symfony/proxy-manager-bridge (Generate service proxies to lazy load them)\r\n"
+    ],
+    [
+      0.000024,
+      "behat/mink suggests installing behat/mink-zombie-driver (fast and JS-enabled headless driver for any app (requires node.js))\r\n"
+    ],
+    [
+      0.000129,
+      "symfony/class-loader suggests installing symfony/polyfill-apcu (For using ApcClassLoader on HHVM)\r\n"
+    ],
+    [
+      0.000073,
+      "symfony/translation suggests installing psr/log (To use logging capability in translator)\r\n"
+    ],
+    [
+      0.000060,
+      "symfony/event-dispatcher suggests installing symfony/http-kernel ()\r\n"
+    ],
+    [
+      0.000068,
+      "symfony/console suggests installing psr/log (For using the console logger)\r\n"
+    ],
+    [
+      0.000101,
+      "behat/behat suggests installing behat/symfony2-extension (for integration with Symfony2 web framework)\r\n"
+    ],
+    [
+      0.000054,
+      "behat/behat suggests installing behat/yii-extension (for integration with Yii web framework)\r\n"
+    ],
+    [
+      0.018371,
+      "\u001b[32mWriting lock file\u001b[39m\r\n"
+    ],
+    [
+      0.000093,
+      "\u001b[32mGenerating autoload files\u001b[39m\r\n"
+    ],
+    [
+      0.419105,
+      "bash-3.2$ "
+    ],
+    [
+      11.843182,
+      "e"
+    ],
+    [
+      0.223906,
+      "x"
+    ],
+    [
+      0.127374,
+      "i"
+    ],
+    [
+      0.111982,
+      "t"
+    ],
+    [
+      0.175828,
+      "\r\n"
+    ]
+  ]
+}
