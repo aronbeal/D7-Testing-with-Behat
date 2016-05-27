@@ -9,7 +9,9 @@ Functional testing in Drupal 7 using Behat 3, Mink, Selenium, DrupalExtension, a
 <aside class="notes" data-markdown>
 This presentation is on using Behat 3 as the basis for testing a Drupal 7 installation, using Mink, Selenium, the Behat Drupal Extension, and some other home grown tools we built to streamline the testing process. 
 
-This presentation briefly covers installation of said tools.  I've also included links throughout the presentation to resources for that. I'll be giving a quick overview of the listed tools and the roles they serve, and then I'll talk about the customizations and lessons we at Eelzee found most useful for our particular setup. I've tried to limit this talk to elements of our experience that will be generally useful. I'm hoping a discussion of our journey might help those of you who are considering the same.
+This presentation briefly covers installation of said tools.  I've also included links throughout the presentation to resources for that. I'll be giving a quick overview of the listed tools and the roles they serve, and then I'll talk about the customizations and lessons we at Eelzee found most useful for our particular setup. Also, while what I'll be talking about is generally applicable to drupal 8 testing with this tooling, I haven't been working in that environment, and can't yet vouch for it.
+
+I've tried to limit this talk to elements of our experience that will be generally useful. I'm hoping a discussion of our journey might help those of you who are considering the same.
 </aside>
 
 ---------------------------------------------
