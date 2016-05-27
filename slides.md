@@ -2,6 +2,10 @@
 
 Functional testing in Drupal 7 using Behat 3, Mink, Selenium, DrupalExtension, and some other homegrown tools
 
+<footer>
+[Aron Beal](https://twitter.com/aronbeal)
+</footer>
+
 <aside class="notes" data-markdown>
 This presentation is on using Behat 3 as the basis for testing a Drupal 7 installation, using Mink, Selenium, the Behat Drupal Extension, and some other home grown tools we built to streamline the testing process. 
 
@@ -614,12 +618,22 @@ One other thing I'll mention while here - state isn't always cleaned up well.  I
 </aside>
 
 ---------------------------------------------
+##Pain points #3,4
+
+- Lack of node reloading
+- Lack of node altering
+
+<aside class="notes" data-markdown>
+The third pain point I'd like to mention is that currently, the driver has no means of reloading nodes you have already created, which means if you want to do something like assign an entity reference value to a node you just created, you're sort of out of luck.  In addition to this, there is only limited support for referring to a particular node you just created, so even if you could reload it, there's nothing provided for you out of the box to store a reference to it, at least not in a systematic fashion.
+</aside>
+
+---------------------------------------------
 #Our custom work at Eelzee
 
 - [https://github.com/aronbeal/drupalextension](https://github.com/aronbeal/drupalextension)
 
 <aside class="notes" data-markdown>
-This segues into our custom work at Eelzee.  We've been trying to solve these issues at Eelzee.  On this page, you can see the url of a fork of the DrupalExtension we've been working from.  We very much hope to get the changes we're making folded back into the original project at some point, but it's still early days.  The maintainer is very busy and often hard to reach, but he's been enthusiastic about the direction of our work.
+This segues into our custom work at Eelzee, where we've been trying to solve these issues.  On this page, you can see the url of a fork of the DrupalExtension we've been working from.  We very much hope to get the changes we're making folded back into the original project at some point, but it's still early days.  The maintainer is very busy and often hard to reach, but he's been enthusiastic about the direction of our work.
 
 Here's some of the 'eureka' moments we've had so far, the lessons of which will hopefully be helpful to you even if you end up working just with the original.
 </aside>
@@ -681,7 +695,7 @@ DrupalExtension still does not do this out of the box.  You'll need some sort of
 </aside>
 
 
-##Optimization 2: Refactoring of means of internal storage to allow shared state
+##Optimization 2: Refactoring RawDrupalContext to allow shared state
 
 <aside class="notes" data-markdown>
 The second optimization we performed deals with shared state.  We wanted to be able to have ANY context class running during a scenario be able to know what other nodes had been created by any other context class.  In order to do this, we rewrote the internals of the RawDrupalContext class to be a more advanced static version - more advanced, because we wanted more flexibility with retrieving nodes we had created later during the scenario, and static, so that the containing data structures would no longer live on the instances of the contexts, with no knowledge of each other.  Our revamping has all contexts adding their creations to a common pool.
@@ -695,12 +709,13 @@ The second optimization we performed deals with shared state.  We wanted to be a
 </figure>
 
 <aside class="notes" data-markdown>
-The third optimization came upon the heels of a realization.  You cannot extend step-defining context classes - if you try, you'll get a 'function is already defined' error, as Behat tries to bring the same method call in twice - once for the parent, and once for the inheriting child.
+The third optimization came upon the heels of a realization.  As I mentioned, you cannot extend step-defining context classes - if you try, you'll get a 'function is already defined' error, as Behat tries to bring the same method call in twice - once for the parent, and once for the inheriting child.
 
-We therefore began removing all significant functionality from the steps themselves, and moving it into the parent classes.  Unlike step-defining context classes, these parent classes could be extended, and moving the functionality into the parent would maximize the possibility for function inheritance and reuse.  I liken it to the therapy ball shown above - the functionality lives centrally, with the steps themselves being reduced to mere nubs on the surface.
+We therefore began removing all significant functionality from the steps themselves, and moving it into the parent classes.  Unlike step-defining context classes, these parent classes could be extended, and moving the functionality into the parent would maximize the possibility for function inheritance and reuse.  I liken it to the therapy ball photo here - the functionality lives centrally, with the steps themselves being reduced to mere nubs on the surface.
 
-In practice, this was a little bit overkill - it turned out that only the functionality that deals with stored state needs to live in non-step defining classes.  Still, this approach has proven very effective so far - we've taken this to the point where any context class that doesn't define steps, we declare as abstract, so we know immediately there won't be any steps in it, and any step defining class we declare as final, so as to take the inherit restrictions in the structure and make them formal.
+In practice, this was a little bit overkill - it turned out that only the functionality that deals with stored state needs to live in non-step defining classes.  Still, this approach has proven very effective so far - we've taken this to the point where any context class that doesn't define steps, we actually declare as abstract, so we know immediately there won't be any steps in it, and any step defining class we declare as final, so as to take the inherent restrictions in the structure and formalize them.
 </aside>
+
 
 ##Optimization 4: "Polling" functions
 
@@ -732,17 +747,23 @@ public function poll($method_name, $wait)
 </code></pre>
 
 <aside class="notes" data-markdown>
-The next optimization I'm going to mention tonight had to do with where context files and feature files live.  Adding features and context files requires changing of the Behat yaml configuration file every time it happens.  We wanted that to happen automatically - we wanted feature and context auto-discovery.  We expect our feature and context files to move in rough synchronization with the code they are intended to test, and we wanted a separation between the custom work we did that could apply to any Drupal site, and the work that would apply to a particular site.
-
-I ended up building a small cli tool using nodejs that would accomplish this for us.  It's not yet ready for general release, unfortunately - it hasn't been tested on anything but my local development platform so far, and I'm currently focusing my efforts on expanding the Behat Extension Driver code, so it may be awhile before it does.  Nevertheless, I mention it here, because I believe it to be an important realization that will benefit others who are considering how to structure their projects.
+The next optimization has to do with javascript based testing. Oftentimes, you'll end up waiting for a callback to complete in order to test whether or not a field contains a particular value.  A lot of the strategies I found online had sleep based functions.  This is a variant of a suggestion by the author that replaces sleeping a predetermined amount of time with a polling function that sleeps a second and tests again.  It's still not entirely optimal, but in practice it works quite well.
 </aside>
 
-##Optimization 5: Let custom steps and features live with the site repo
+
+##Optimization 5: Location of feature and context files
+
+- Site agnostic contexts (testing tool folder)
+- Site specific general contexts (Drupal repo, subfolder ... ?)
+- Content type specific contexts (Drupal repo, subfolder ... ?)
+
 
 <aside class="notes" data-markdown>
-The next optimization I'm going to mention tonight had to do with where context files and feature files live.  Adding features and context files requires changing of the Behat yaml configuration file every time it happens.  We wanted that to happen automatically - we wanted feature and context auto-discovery.  We expect our feature and context files to move in rough synchronization with the code they are intended to test, and we wanted a separation between the custom work we did that could apply to any Drupal site, and the work that would apply to a particular site.
+The final optimization I'm going to mention tonight had to do with where context files and feature files live.  Adding features and context files requires changing of the Behat yaml configuration file every time it happens.  We wanted that to happen automatically - we wanted feature and context auto-discovery.  We expect our feature and context files to move in rough synchronization with the code they are intended to test, and we wanted a separation between the custom work we did that could apply to any Drupal site, and the work that would apply to a particular site.
 
-I ended up building a small cli tool using nodejs that would accomplish this for us.  It's not yet ready for general release, unfortunately - it hasn't been tested on anything but my local development platform so far, and I'm currently focusing my efforts on expanding the Behat Extension Driver code, so it may be awhile before it does.  Nevertheless, I mention it here, because I believe it to be an important realization that will benefit others who are considering how to structure their projects.
+We've been categorizing context files in the above fashion.  Some of them contain tooling that will work with many different installations - this, we kept in our testing tool repository.  Some of it was for a specific drupal instance, but general in nature, and some of it was specific to a certain content type.  We're still deciding on optimal placement for those types of files.
+
+I ended up building a small cli tool using nodejs that would help with context and feature discovery.  It's not yet ready for general release, unfortunately - it hasn't been tested on anything but my local development platform so far, and I'm currently focusing my efforts on expanding the Behat Extension Driver code, so it may be awhile before it does.
 </aside>
 
 ---------------------------------------------
