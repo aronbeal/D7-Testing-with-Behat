@@ -642,7 +642,7 @@ Here's some of the 'eureka' moments we've had so far, the lessons of which will 
 
 
 ##Optimization 1 
-###Storing context references during runtime
+Storing context references during runtime
 
 - Capture reference to external context in the `@BeforeScenario` hook
 - store internally in a custom class (NOT a step-defining class)
@@ -697,14 +697,16 @@ DrupalExtension still does not do this out of the box.  You'll need some sort of
 </aside>
 
 
-##Optimization 2: Refactoring RawDrupalContext to allow shared state
+##Optimization 2
+Refactoring RawDrupalContext to allow shared state
 
 <aside class="notes" data-markdown>
 The second optimization we performed deals with shared state.  We wanted to be able to have ANY context class running during a scenario be able to know what other nodes had been created by any other context class.  In order to do this, we rewrote the internals of the RawDrupalContext class to be a more advanced static version - more advanced, because we wanted more flexibility with retrieving nodes we had created later during the scenario, and static, so that the containing data structures would no longer live on the instances of the contexts, with no knowledge of each other.  Our revamping has all contexts adding their creations to a common pool.
 	</aside>
 
 
-##Optimization 3: Divestment of functionality from step definitions
+##Optimization 3
+Divestment of functionality from step definitions
 <figure class="col polaroid">
 	<img class="rot180" src="img/therapy_ball.png" alt="Martin Fowler's testing pyramid."/>
 </figure>
@@ -718,7 +720,8 @@ In practice, this was a little bit overkill - it turned out that only the functi
 </aside>
 
 
-##Optimization 4: "Polling" functions
+##Optimization 4
+"Polling" functions
 
 <pre><code class="php full" data-trim >
 public function poll($method_name, $wait)
@@ -748,7 +751,8 @@ The next optimization has to do with javascript based testing. Oftentimes, you'l
 </aside>
 
 
-##Optimization 5: Location of feature and context files
+##Optimization 5 
+Location of feature and context files
 
 - Site agnostic contexts (testing tool folder)
 - Site specific general contexts (Drupal repo, subfolder ... ?)
