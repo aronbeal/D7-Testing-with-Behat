@@ -705,7 +705,7 @@ The second optimization we performed deals with shared state.  We wanted to be a
 ##Optimization 3: Divestment of functionality from step definitions
 <figure class="col polaroid">
 	<img class="rot180" src="img/therapy_ball.png" alt="Martin Fowler's testing pyramid."/>
-	<figcaption>moving the functionality away from the steps</figcaption>
+	<figcaption>It's a metaphor, or something...</figcaption>
 </figure>
 
 <aside class="notes" data-markdown>
