@@ -3,7 +3,7 @@
 Functional testing in Drupal 7 using Behat 3, Mink, Selenium, DrupalExtension, and some other homegrown tools
 
 <aside class="notes" data-markdown>
-This presentation is on using Behat 3 as the basis for testing a Drupal 7 installation, using Mink, Selenium, the Behat Drupal Extension, and some other home grown tools to get the testing done. 
+This presentation is on using Behat 3 as the basis for testing a Drupal 7 installation, using Mink, Selenium, the Behat Drupal Extension, and some other home grown tools we built to streamline the testing process. 
 
 This presentation briefly covers installation of said tools.  I've also included links throughout the presentation to resources for that. I'll be giving a quick overview of the listed tools and the roles they serve, and then I'll talk about the customizations and lessons we at Eelzee found most useful for our particular setup. I've tried to limit this talk to elements of our experience that will be generally useful. I'm hoping a discussion of our journey might help those of you who are considering the same.
 </aside>
@@ -24,7 +24,7 @@ This presentation briefly covers installation of said tools.  I've also included
 </footer>
 
 <aside class="notes" data-markdown>
-The tools I rattled off on the prior page might be foreign to many here, but SimpleTest shouldn't be.  Before we start talking about what those listed tools are and how they'll help us, i should mention why we leaned away from SimpleTest.
+The tools I rattled off on the prior page might be foreign to many here, but SimpleTest shouldn't be.  Before we start talking about what those listed tools are and how they'll help us, I should mention why we leaned away from SimpleTest.
 
 On this slide I've got a thread title and a quote in this page, with sources footnoted below.  The first is the meta thread titled "Replace the testing framework with PHPUnit and possibly rewrite Simpletest", whose url is in the footnotes below.  The long term suggestions for this thread include using PHPUnit for unit tests, and Mink+Guzzle+Goutte for web/integration tests, and possibly Behat for  BDD tests.  This thread is the primary rationale for our choice, although it was backed up by other sources like the quote that follows it.  We adopted these tools primarily so that we can write testing that is more or less forward compatible with the future plans of Drupal.
 
@@ -107,7 +107,7 @@ Further reading:
 <aside class="notes" data-markdown>
 What are Mink and Selenium?   Mink is an open source browser controller/emulator for web applications.  The distinction being drawn here is between browser emulators, which request pages and process them in code (but don't do javascript or ajax), and browser controllers, which interact with an actual browser.  Mink is meant to unify the api differences between emulators and controllers, as both will likely eventually be needed in testing.
 
-Selenium is a browser controller leveraged by mink to do the actual driving of the browser during testing that requires javascript or ajax.  Selenium has drivers for all the major browsers, and many third party drivers as well.
+Selenium is a browser controller leveraged by mink to do the actual driving of the browser during testing that requires javascript or ajax.  Selenium has drivers for all the major browsers, and many third party drivers as well, although you may have to download and install some of those drivers separately.
 </aside>
 
 ---------------------------------------------
@@ -116,8 +116,8 @@ Selenium is a browser controller leveraged by mink to do the actual driving of t
 - Provides Step definitions common to Drupal testing scenarios
 - Execution through:
 	- Blackbox: no privileged access
-	- Drush
-	- DrupalApi
+    - DrupalApi: most powerful.  Same machine
+	- Drush: partial service layer, different machines possible.
 
 <footer>
 Further reading:
@@ -131,7 +131,7 @@ The extension provides testing access via the blackbox, Drush, or Drupal drivers
 The blackbox driver skips the service layer entirely, and assumes no privileged access to the site. You can run the tests on a local or remote server, but all the actions must take place by using the site's user interface.
 
 The Drupal API Driver is the fastest and the most powerful of the three drivers. Its biggest limitation is that the tests must run on the same server as the Drupal site.  This was not a limitation for us, so that's mostly what I'll be focusing on here.
-The Drush API driver serves as a partial service layer implementation, but one that can't use javascript. The main advantage of the Drush driver is that it can work when your tests run on a different server than the site being tested.
+The Drush API driver serves as a partial service layer implementation, but one that can't use javascript. An advantage of the Drush driver is that it can work when your tests run on a different server than the site being tested, but still offers some of the Drupal API functionality.
 
 You can start functional testing by using the steps this module defines without worrying about writing your own custom step definitions.  It's worthwhile trying to accomplish your testing simply using what is on offer there, but we've found that it's best to start writing your own definitions almost immediately, as it gives you far greater control as to how your tests are written.  Before that, though, let's look an example Behat test:
 </aside>
@@ -381,6 +381,9 @@ Just to show that this is actually doing something, let's reverse the condition.
 
 
 <div id='asciicast-feature1-fail2'></div>
+<footer>
+Further reading: [Behat full config example](https://gist.github.com/aronbeal/49e66e5865ac80677751138668834cb1)
+</footer>
 
 <aside class="notes" data-markdown>
 And ... wait for it...
@@ -549,8 +552,7 @@ That's the bare bones of how all this works.  I'm going to need to step it up a 
 
 ---------------------------------------------
 ##Pain point #1
-
-- Lack of inter-context communication
+###Lack of inter-context communication
 
 <aside class="notes" data-markdown>
 When you start digging into this, you're probably going to hit the same issue we did fairly quickly - that of Context files not being able to communicate with each other, and lack of shared state.
@@ -577,16 +579,18 @@ public function assertAnonymousUser() {
 
 </code></pre>
 
-
 <aside class="notes" data-markdown>
 RawDrupalContext is what you extend when a context file is generated directly for you, and the above directory is where it's found.  You'll find another class in this directory, DrupalContext.  Where RawDrupalContext defines some shared functionality, this class is responsible for actually defining many of the steps you see when you execute behat with the 'di' flag.
 If we look inside DrupalContext, we see that it has the following step definition (among many others).  The step leverages its parent class method to enact a a logout during the current scenario.</aside>
 
+
+###Pain point #1.1
 - In Behat 3, step defining classes are non-inheritable.
 - In Behat 3, context classes cannot communicate with each other directly.
 <footer>
 Further (optional) reading: [SubContexts](https://behat-drupal-extension.readthedocs.io/en/3.1/subcontexts.html)
 </footer>
+
 <aside class="notes" data-markdown>
 Some things you need to know at this point: In Behat 3, whenever a context class defines a step, it immediately becomes non-inheritable.  Defining a step simply consists of adding one of those @Given step tags within the docblock of one of the class' methods. The minute you try this, you'll get errors from php complaining that a function is already defined.  This occurs because Behat internals add any step definition tests to the environment, and then tries to add them again with any class that extends the step-defining one.  Step-defining context classes are therefore de-facto final.  Even as much as one step in the class is enough to make it so.
 
@@ -599,11 +603,14 @@ The author of DrupalExtension purports to get around this communication issue by
 
 ---------------------------------------------
 ##Pain point #2
+###Lack of shared state
 
-- Lack of shared state
+- Side note: state isn't always cleaned up well - DON'T run this on a production site.
 
 <aside class="notes" data-markdown>
 The second pain point is lack of shared state between running contexts.  Why is this a problem?  As it currently stands, when a class that extends RawDrupalExtension does something like create a user, it stores reference to that user internally on the context instance, so that it can be removed from the database at the completion of a scenario.  The implementation, however, was done in a Behat 2 world with subcontexts in mind.  Under the new paradigm, if a context creates something for testing purposes, other contexts have no idea that node exists - it's in the database, but they have no means of referencing it.  Similarly, if another context logs in a user, you can't determine anything about that logged in user from your custom context.
+
+One other thing I'll mention while here - state isn't always cleaned up well.  In particular, if a scenario crashes with a fatal PHP exception, or if you create something as a side effect of leveraging the mink api to interact with browser fields, the context classes won't know about it, and it'll remain in the database after the scenario ends.  Usually, this hasn't presented a problem, other than database cruft, but I would never want to run tests directly on a production site as a result of this.
 </aside>
 
 ---------------------------------------------
@@ -618,16 +625,20 @@ Here's some of the 'eureka' moments we've had so far, the lessons of which will 
 </aside>
 
 
-##Optimization 1: Storing context references during runtime
+##Optimization 1 
+###Storing context references during runtime
 
 - Capture reference to external context in the `@BeforeScenario` hook
 - store internally in a custom class (NOT a step-defining class)
 - Invoke directly from custom code
 
-<footer>
-Further reading: 
-- [How to deal with "Step is already defined"](https://www.drupal.org/node/2685951#comment-10961257)
-- [Add a cookbook about accessing contexts from each other](https://github.com/Behat/docs/pull/65)
+<footer data-trim>
+
+<p>Further reading:
+
+<ul><li>[How to deal with "Step is already defined"](https://www.drupal.org/node/2685951#comment-10961257)</li>
+<li>[Add a cookbook about accessing contexts from each other](https://github.com/Behat/docs/pull/65)</li></ul>
+</p>
 </footer>
 
 <aside class="notes" data-markdown>
@@ -691,11 +702,45 @@ We therefore began removing all significant functionality from the steps themsel
 In practice, this was a little bit overkill - it turned out that only the functionality that deals with stored state needs to live in non-step defining classes.  Still, this approach has proven very effective so far - we've taken this to the point where any context class that doesn't define steps, we declare as abstract, so we know immediately there won't be any steps in it, and any step defining class we declare as final, so as to take the inherit restrictions in the structure and make them formal.
 </aside>
 
+##Optimization 4: "Polling" functions
 
-##Optimization 4: Let custom steps and features live with the site repo
+<pre><code class="php" data-trim>
+public function poll($method_name, $wait)
+{
+    // Everything after the second argument is arguments for the method.
+    $args = array_slice(func_get_args(), 2);
+
+    for ($i = 0; $i < intval($wait); $i++) {
+      try {
+        // TODO: note - relies on called method throwing exception in the case
+        // of a problem.  This is generally true with assertion functions,
+        // but I may need to revisit this for the general case.
+
+        if (!call_user_func_array(array($this, $method_name), $args)) {
+          return false;
+        }
+        return true;
+      } catch (\Exception $e) {
+        if (($i + 1) === intval($wait)) {
+          throw new \Exception(sprintf("%s::%s: %s (after %s seconds)", get_class($this), __FUNCTION__, $e->getMessage(), $wait));
+        }
+      }
+      // One second between test iterations.
+      sleep(1);
+    }
+}
+</code></pre>
 
 <aside class="notes" data-markdown>
-The final optimization I'm going to mention tonight had to do with where context files and feature files live.  Adding features and context files requires changing of the Behat yaml configuration file every time it happens.  We wanted that to happen automatically - we wanted feature and context auto-discovery.  We expect our feature and context files to move in rough synchronization with the code they are intended to test, and we wanted a separation between the custom work we did that could apply to any Drupal site, and the work that would apply to a particular site.
+The next optimization I'm going to mention tonight had to do with where context files and feature files live.  Adding features and context files requires changing of the Behat yaml configuration file every time it happens.  We wanted that to happen automatically - we wanted feature and context auto-discovery.  We expect our feature and context files to move in rough synchronization with the code they are intended to test, and we wanted a separation between the custom work we did that could apply to any Drupal site, and the work that would apply to a particular site.
+
+I ended up building a small cli tool using nodejs that would accomplish this for us.  It's not yet ready for general release, unfortunately - it hasn't been tested on anything but my local development platform so far, and I'm currently focusing my efforts on expanding the Behat Extension Driver code, so it may be awhile before it does.  Nevertheless, I mention it here, because I believe it to be an important realization that will benefit others who are considering how to structure their projects.
+</aside>
+
+##Optimization 5: Let custom steps and features live with the site repo
+
+<aside class="notes" data-markdown>
+The next optimization I'm going to mention tonight had to do with where context files and feature files live.  Adding features and context files requires changing of the Behat yaml configuration file every time it happens.  We wanted that to happen automatically - we wanted feature and context auto-discovery.  We expect our feature and context files to move in rough synchronization with the code they are intended to test, and we wanted a separation between the custom work we did that could apply to any Drupal site, and the work that would apply to a particular site.
 
 I ended up building a small cli tool using nodejs that would accomplish this for us.  It's not yet ready for general release, unfortunately - it hasn't been tested on anything but my local development platform so far, and I'm currently focusing my efforts on expanding the Behat Extension Driver code, so it may be awhile before it does.  Nevertheless, I mention it here, because I believe it to be an important realization that will benefit others who are considering how to structure their projects.
 </aside>

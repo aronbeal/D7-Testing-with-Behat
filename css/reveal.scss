@@ -271,7 +271,13 @@ html:-moz-full-screen-ancestor {
         background-color: inherit !important;
     }
 }
-
+#speaker-controls{
+    .speaker-controls-notes{
+        .value{
+            font-size: 1em;
+        }
+    } 
+}
 /*********************************************
  * CONTROLS
  *********************************************/
