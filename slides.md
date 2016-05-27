@@ -720,7 +720,7 @@ In practice, this was a little bit overkill - it turned out that only the functi
 
 ##Optimization 4: "Polling" functions
 
-<pre><code class="php" data-trim>
+<pre><code class="php full" data-trim >
 public function poll($method_name, $wait)
 {
     // Everything after the second argument is arguments for the method.
