@@ -3,7 +3,7 @@
 Functional testing in Drupal 7 using Behat 3, Mink, Selenium, DrupalExtension, and some other homegrown tools
 
 <footer>
-[Aron Beal](https://twitter.com/aronbeal)
+[Aron Beal (twitter:@aronbeal)](https://twitter.com/aronbeal)
 </footer>
 
 <aside class="notes" data-markdown>
