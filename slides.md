@@ -728,10 +728,6 @@ public function poll($method_name, $wait)
 
     for ($i = 0; $i < intval($wait); $i++) {
       try {
-        // TODO: note - relies on called method throwing exception in the case
-        // of a problem.  This is generally true with assertion functions,
-        // but I may need to revisit this for the general case.
-
         if (!call_user_func_array(array($this, $method_name), $args)) {
           return false;
         }
