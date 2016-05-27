@@ -756,7 +756,6 @@ The next optimization has to do with javascript based testing. Oftentimes, you'l
 - Site specific general contexts (Drupal repo, subfolder ... ?)
 - Content type specific contexts (Drupal repo, subfolder ... ?)
 
-
 <aside class="notes" data-markdown>
 The final optimization I'm going to mention tonight had to do with where context files and feature files live.  Adding features and context files requires changing of the Behat yaml configuration file every time it happens.  We wanted that to happen automatically - we wanted feature and context auto-discovery.  We expect our feature and context files to move in rough synchronization with the code they are intended to test, and we wanted a separation between the custom work we did that could apply to any Drupal site, and the work that would apply to a particular site.
 
